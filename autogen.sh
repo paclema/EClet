@@ -27,7 +27,7 @@ if [ $HAVE_CRYPTI2C -eq 0 ]; then
     echo libcryptoauth already installed
 else
     rm -rf libcryptoauth-0.2
-    wget -c https://github.com/cryptotronix/libcrypti2c/releases/download/v0.2/libcryptoauth-0.2.tar.gz
+    wget -c https://github.com/cryptotronix/libcrypti2c/releases/download/v0.2/libcryptoauth-0.2.tar.gz --no-check-certificate
     tar xf libcryptoauth-0.2.tar.gz
     cd libcryptoauth-0.2
     ./configure

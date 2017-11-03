@@ -33,9 +33,9 @@ else
     ./configure
     make
     echo Enter password to install libcrypti2c library
-    sudo make install
+    make install
     cd ..
-    sudo ldconfig
+    ldconfig
 fi
 
 echo Generating README prerequisite...

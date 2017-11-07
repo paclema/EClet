@@ -23,20 +23,20 @@ fi
 pkg-config --exists cryptoauth-0.2
 HAVE_CRYPTI2C=$?
 
-#if [ $HAVE_CRYPTI2C -eq 0 ]; then
-#    echo libcryptoauth already installed
-#else
-rm -rf libcryptoauth-0.2
-wget -c https://github.com/cryptotronix/libcrypti2c/releases/download/v0.2/libcryptoauth-0.2.tar.gz --no-check-certificate
-tar xf libcryptoauth-0.2.tar.gz
-cd libcryptoauth-0.2
-./configure
-make
-echo Enter password to install libcrypti2c library
-make install
-cd ..
-ldconfig
-#fi
+if [ $HAVE_CRYPTI2C -eq 0 ]; then
+    echo libcryptoauth already installed
+else
+    rm -rf libcryptoauth-0.2
+    wget -c https://github.com/cryptotronix/libcrypti2c/releases/download/v0.2/libcryptoauth-0.2.tar.gz --no-check-certificate
+    tar xf libcryptoauth-0.2.tar.gz
+    cd libcryptoauth-0.2
+    ./configure
+    make
+    echo Enter password to install libcrypti2c library
+    make install
+    cd ..
+    ldconfig
+fi
 
 echo Generating README prerequisite...
 egrep -v "\[Build Status\]|Coverity Scan Build Status|scan\.coverity\.com" README.md \

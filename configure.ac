@@ -24,7 +24,7 @@ AC_CHECK_HEADERS([linux/i2c-dev.h sys/ioctl.h fcntl.h])
 AC_PROG_CC
 AM_PROG_CC_C_O
 AC_CONFIG_FILES([Makefile doc/Makefile])
-#PKG_PROG_PKG_CONFIG
+PKG_PROG_PKG_CONFIG
 #PKG_CHECK_MODULES([DEPS], [cryptoauth-0.2])
 AC_PROG_LIBTOOL
 
